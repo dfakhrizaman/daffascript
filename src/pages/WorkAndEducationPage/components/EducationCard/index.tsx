@@ -5,7 +5,6 @@ import duisburgEssenLogo from "../../../../assets/duisburg-essen-logo.jpeg";
 import DetailItem from "../DetailItem";
 import { CardItem } from "../../../../types/CardItem.type";
 
-const test = "";
 const educationList: CardItem[] = [
   {
     id: "universitas-indonesia",
