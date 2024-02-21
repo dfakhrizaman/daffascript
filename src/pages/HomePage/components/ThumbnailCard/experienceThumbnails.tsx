@@ -1,16 +1,9 @@
 import bfiLogo from "../../../../assets/bfi-logo.jpeg";
 import adventureCareUI from "../../../../assets/adventure-care-ui.jpg";
 import exerciseAssistantUI from "../../../../assets/exercise-assistant-ui.jpg";
-export interface ExperienceThumbnail {
-  id: string;
-  tags: string[];
-  title: string;
-  subtitle: string;
-  markdownContent: string;
-  image: string;
-}
+import DetailItem from "../../../../types/DetailItem.type";
 
-const experienceThumbnails: ExperienceThumbnail[] = [
+const experienceThumbnails: DetailItem[] = [
   {
     id: "bfi-finance",
     tags: ["WEB", "REACT.JS", "MOBILE", "FINANCE"],

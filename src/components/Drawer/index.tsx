@@ -1,14 +1,16 @@
-import { Box, IconButton, Stack, Tooltip, useMediaQuery } from "@mui/material";
+import { Box, IconButton, Stack, Tooltip } from "@mui/material";
 import { ReactNode } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import menuItems from "../../constants/drawerItems";
+import useIsMobile from "../../hooks/useIsMobile";
+import DetailModal from "../DetailModal";
 
 interface Props {
   children: ReactNode | ReactNode[];
 }
 
 const Drawer = ({ children }: Props) => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useIsMobile();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -22,7 +24,6 @@ const Drawer = ({ children }: Props) => {
     >
       {!isMobile && (
         <Box
-          height="100%"
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -52,7 +53,19 @@ const Drawer = ({ children }: Props) => {
           </Stack>
         </Box>
       )}
-      {children}
+      {location.pathname === "/" ? (
+        children
+      ) : (
+        <Box
+          sx={
+            location.pathname !== "/" ? { overflowY: "auto", flexGrow: 1 } : {}
+          }
+        >
+          {children}
+        </Box>
+      )}
+
+      <DetailModal />
     </Box>
   );
 };

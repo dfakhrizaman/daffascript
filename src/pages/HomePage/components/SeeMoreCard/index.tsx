@@ -1,9 +1,16 @@
-import { Box, IconButton, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import TemplateCard from "../TemplateCard";
-import { OpenInNew } from "@mui/icons-material";
+import useIsMobile from "../../../../hooks/useIsMobile";
+import TextButton from "../../../../components/TextButton";
+import { useNavigate } from "react-router-dom";
 
 const SeeMoreCard = () => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useIsMobile();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/experience-and-education");
+  };
 
   return (
     <TemplateCard height={isMobile ? "100px" : null}>
@@ -25,11 +32,9 @@ const SeeMoreCard = () => {
             textOverflow: "ellipsis",
           }}
         >
-          See more of my works and feats!
+          See more of my works!
         </Typography>
-        <IconButton sx={{ alignSelf: "start", padding: 0 }}>
-          <OpenInNew />
-        </IconButton>
+        <TextButton onClick={handleClick}>See More</TextButton>
       </Box>
     </TemplateCard>
   );

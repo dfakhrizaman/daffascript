@@ -12,9 +12,9 @@ const menuItems = [
     icon: <PersonOutline />,
   },
   {
-    id: "works-and-education",
-    label: "Works and Education",
-    route: "/works-and-education",
+    id: "experience-and-education",
+    label: "Experience and Education",
+    route: "/experience-and-education",
     icon: <WorkOutlineOutlined />,
   },
   {

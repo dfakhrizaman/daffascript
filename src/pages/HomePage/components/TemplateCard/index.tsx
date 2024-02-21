@@ -1,12 +1,14 @@
-import { Box } from "@mui/material";
+import { Theme } from "@emotion/react";
+import { Box, SxProps } from "@mui/material";
 import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode | ReactNode[];
   height?: string | number | undefined | null;
+  sx?: SxProps<Theme>;
 }
 
-const TemplateCard = ({ children, height }: Props) => {
+const TemplateCard = ({ children, height, sx }: Props) => {
   return (
     <Box
       sx={{
@@ -14,6 +16,7 @@ const TemplateCard = ({ children, height }: Props) => {
         borderRadius: "16px",
         padding: "22px",
         height: height || "150px",
+        ...sx,
       }}
     >
       {children}

@@ -1,20 +1,27 @@
-import {
-  Box,
-  IconButton,
-  Stack,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import TemplateCard from "../TemplateCard";
-import { OpenInNew } from "@mui/icons-material";
-import { ExperienceThumbnail } from "./experienceThumbnails";
+import TextButton from "../../../../components/TextButton";
+import DetailItem from "../../../../types/DetailItem.type";
+import { useDispatch } from "react-redux";
+import { setDetailModal } from "../../../../redux/detailModal.slice";
 
 interface Props {
-  content: ExperienceThumbnail;
+  content: DetailItem;
 }
 
 const ThumbnailCard = ({ content }: Props) => {
   const isBigScreen = useMediaQuery("(min-width:1400px)");
+
+  const dispatch = useDispatch();
+
+  const handleOpenModal = () => {
+    dispatch(
+      setDetailModal({
+        open: true,
+        content: content,
+      })
+    );
+  };
 
   return (
     <TemplateCard>
@@ -51,6 +58,7 @@ const ThumbnailCard = ({ content }: Props) => {
                     </Typography>
                   )}
                   <Typography
+                    onClick={() => console.log("test")}
                     sx={{
                       color: "#A1A1A1",
                       fontSize: "14px",
@@ -80,9 +88,7 @@ const ThumbnailCard = ({ content }: Props) => {
             </Typography>
           </Stack>
 
-          <IconButton sx={{ alignSelf: "start", padding: 0 }}>
-            <OpenInNew />
-          </IconButton>
+          <TextButton onClick={handleOpenModal}>See More</TextButton>
         </Box>
 
         {isBigScreen && (
@@ -95,6 +101,7 @@ const ThumbnailCard = ({ content }: Props) => {
             }}
           >
             <img
+              alt={content.title}
               src={content.image}
               style={{
                 maxWidth: "90px",

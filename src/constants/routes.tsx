@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material";
 import HomePage from "../pages/HomePage";
+import WorkAndEducationPage from "../pages/WorkAndEducationPage";
+import AchievementsPage from "../pages/AchievementsPage";
 
 const routes = [
   {
@@ -7,20 +8,12 @@ const routes = [
     element: <HomePage />,
   },
   {
-    path: "/works-and-education",
-    element: (
-      <Box>
-        <Typography variant="h2">Hello world!</Typography>
-      </Box>
-    ),
+    path: "/experience-and-education",
+    element: <WorkAndEducationPage />,
   },
   {
     path: "/achievements",
-    element: (
-      <Box>
-        <Typography variant="h2">Hpage</Typography>
-      </Box>
-    ),
+    element: <AchievementsPage />,
   },
 ];
 
