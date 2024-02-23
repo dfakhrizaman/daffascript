@@ -9,8 +9,8 @@ const experienceThumbnails: DetailItem[] = [
     tags: ["WEB", "REACT.JS", "MOBILE", "FINANCE"],
     title: "BFI Finance",
     subtitle:
-      "Part of Indonesia's biggest and most established multi-finance company's Digital Incubation team.",
-    markdownContent: "test",
+      "Frontend Engineer at Indonesia's biggest and most established multi-finance company's Digital Incubation team.",
+    markdownContent: 'bfi-finance.md',
     image: bfiLogo,
   },
   {
@@ -19,16 +19,16 @@ const experienceThumbnails: DetailItem[] = [
     title: "AdventureCare.ID",
     subtitle:
       "Fostering healthy habits in children with Type 1 Diabetes through mobile game.",
-    markdownContent: "test",
+    markdownContent: 'adventure-care.md',
     image: adventureCareUI,
   },
   {
     id: "exercise-assistant",
-    tags: ["WEB", "REACT", "TENSORFLOW", "HEALTH"],
+    tags: ["WEB", "AI", "TENSORFLOW", "HEALTH"],
     title: "Virtual Fitness Coach",
     subtitle:
       "Utilizing TensorFlow to power a website dedicated for daily exercise routines.",
-    markdownContent: "test",
+    markdownContent: 'virtual-fitness-coach.md',
     image: exerciseAssistantUI,
   },
 ];

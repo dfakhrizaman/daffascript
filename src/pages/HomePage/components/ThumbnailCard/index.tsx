@@ -11,6 +11,7 @@ interface Props {
 
 const ThumbnailCard = ({ content }: Props) => {
   const isBigScreen = useMediaQuery("(min-width:1400px)");
+  const isMidScreen = useMediaQuery("(min-width: 610px) and (max-width: 1000px)");
 
   const dispatch = useDispatch();
 
@@ -22,6 +23,35 @@ const ThumbnailCard = ({ content }: Props) => {
       })
     );
   };
+
+  function renderTag(tag: string, index: number) {
+    return <Box key={tag} sx={{ display: "flex" }}>
+      {index === 0 ? null : (
+        <Typography
+          sx={{
+            color: "#A1A1A1",
+            fontSize: "14px",
+            fontWeight: "600",
+            fontFamily: "IBM Plex Mono",
+            marginX: "6px",
+          }}
+        >
+          {" · "}
+        </Typography>
+      )}
+      <Typography
+        onClick={() => console.log("test")}
+        sx={{
+          color: "#A1A1A1",
+          fontSize: "14px",
+          fontWeight: "600",
+          fontFamily: "IBM Plex Mono",
+        }}
+      >
+        {tag}
+      </Typography>
+    </Box>;
+  }
 
   return (
     <TemplateCard>
@@ -42,34 +72,15 @@ const ThumbnailCard = ({ content }: Props) => {
         >
           <Stack spacing="2px">
             <Box sx={{ display: "flex" }}>
-              {content.tags.map((tag, index) => (
-                <Box key={tag} sx={{ display: "flex" }}>
-                  {index === 0 ? null : (
-                    <Typography
-                      sx={{
-                        color: "#A1A1A1",
-                        fontSize: "14px",
-                        fontWeight: "600",
-                        fontFamily: "IBM Plex Mono",
-                        marginX: "6px",
-                      }}
-                    >
-                      {" · "}
-                    </Typography>
-                  )}
-                  <Typography
-                    onClick={() => console.log("test")}
-                    sx={{
-                      color: "#A1A1A1",
-                      fontSize: "14px",
-                      fontWeight: "600",
-                      fontFamily: "IBM Plex Mono",
-                    }}
-                  >
-                    {tag}
-                  </Typography>
-                </Box>
-              ))}
+              {
+                isMidScreen
+                  ? content.tags.slice(0, 2).map((tag, index) => (
+                    renderTag(tag, index)
+                  ))
+                  : content.tags.map((tag, index) => (
+                    renderTag(tag, index)
+                  ))
+              }
             </Box>
             <Typography variant="h3">{content.title}</Typography>
 
