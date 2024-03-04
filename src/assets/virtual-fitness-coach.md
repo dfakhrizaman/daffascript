@@ -33,4 +33,5 @@ The app itself utilizes **TensorFlow** to help track the user's movement to serv
 
 - Railway
 
-#### [See more](https://pose-estimation-frontend.up.railway.app/)
+#### <a href="https://pose-estimation-frontend.up.railway.app/" target="_blank">See More</a>
+

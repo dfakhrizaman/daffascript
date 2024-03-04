@@ -17,6 +17,7 @@
 - Provider
 
 ## See More
-- [**adventurecare.id**](https://adventurecare.id/)
 
-- [**Instagram**](https://www.instagram.com/adventurecare.id/)
+- #### <a href="https://adventurecare.id/" target="_blank">adventurecare.id</a>
+
+- #### <a href="https://www.instagram.com/adventurecare.id/" target="_blank">Instagram</a>

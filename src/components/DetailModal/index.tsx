@@ -1,4 +1,4 @@
-import { Box, Dialog, Typography } from "@mui/material";
+import { Box, Dialog, Fab, IconButton, Typography } from "@mui/material";
 import {
   resetDetailModal,
   selectDetailModal,
@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import TextButton from "../TextButton";
+import useIsMobile from "../../hooks/useIsMobile";
+import { Close } from "@mui/icons-material";
 
 function renderTag(tag: string, index: number) {
   return <Box key={tag} sx={{ display: "flex" }}>
@@ -43,6 +45,8 @@ const DetailModal = () => {
   const modalState = useAppSelector(selectDetailModal);
   const [content, setContent] = useState('');
 
+  const isMobile = useIsMobile();
+
   const handleClose = () => {
     dispatch(resetDetailModal());
   };
@@ -76,12 +80,45 @@ const DetailModal = () => {
       PaperProps={{
         sx: {
           padding: '32px',
-          width: '50vw',
-          maxHeight: '80vh'
+          width: isMobile ? '100vw' : '50vw',
+          maxHeight: isMobile ? '100vh' : '80vh'
         }
       }}
+      fullScreen
     >
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      {
+        isMobile && <Fab
+          aria-label="close"
+          sx={{
+            position: 'fixed',
+            top: '32px',
+            alignSelf: 'end',
+            backgroundColor: 'white',
+            width: '42px',
+            height: '42px'
+          }}
+          onClick={handleClose}
+        >
+          <Close />
+        </Fab>
+      }
+
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          marginY: isMobile ? '32px' : null
+        }}
+      >
+        <IconButton
+          sx={{
+            alignSelf: 'end',
+            visibility: isMobile ? 'hidden' : 'inherit'
+          }}
+          onClick={handleClose}
+        >
+          <Close />
+        </IconButton>
         <Box sx={{ display: "flex" }}>
           {
             modalState.content.tags?.map((tag, index) => (

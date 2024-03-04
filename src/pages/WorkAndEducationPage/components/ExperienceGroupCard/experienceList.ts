@@ -26,7 +26,7 @@ export const experienceList: CardItem[] = [
     companyImage: iceHouseLogo,
     dateRange: 'May 2022 - Dec 2022',
     description: 'Test Desc',
-    markdownContent: 'bfi-finance.md',
+    markdownContent: 'ice-house.md',
     tags: ["WEB", "REACT.JS", "DASHBOARD"],
   },
   {

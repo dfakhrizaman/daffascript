@@ -10,4 +10,4 @@ Working on a product with over **3000 active** users spread across Indonesia.
 
 - Collaborate with product team, UI/UX designer, QA, and other software engineers to deliver high-quality codes and features.
 
-#### [See more](https://www.bfi.co.id/en)
+#### <a href="https://www.bfi.co.id/en" target="_blank">See More</a>

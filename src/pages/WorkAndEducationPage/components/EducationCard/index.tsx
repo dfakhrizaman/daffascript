@@ -8,12 +8,13 @@ import { CardItem } from "../../../../types/CardItem.type";
 const educationList: CardItem[] = [
   {
     id: "universitas-indonesia",
-    companyName: "Universitas Indonesia",
+    companyName: "University of Indonesia",
     role: "Electrical Engineering",
     type: "Bachelor's Degree",
     companyImage: universitasIndonesiaLogo,
-    dateRange: "Dec 2022 - Now",
+    dateRange: "2019 - 2024",
     description: "",
+    markdownContent: "universitas-indonesia.md"
   },
   {
     id: "duisburg-essen",
@@ -23,6 +24,7 @@ const educationList: CardItem[] = [
     companyImage: duisburgEssenLogo,
     dateRange: "Oct 2022 - Mar 2023",
     description: "",
+    markdownContent: "university-duisburg-essen.md"
   },
 ];
 

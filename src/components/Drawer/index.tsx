@@ -1,4 +1,4 @@
-import { Box, IconButton, Stack, Tooltip } from "@mui/material";
+import { BottomNavigation, BottomNavigationAction, Box, IconButton, Stack, Tooltip } from "@mui/material";
 import { ReactNode } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import menuItems from "../../constants/drawerItems";
@@ -53,6 +53,45 @@ const Drawer = ({ children }: Props) => {
           </Stack>
         </Box>
       )}
+
+      {isMobile &&
+        <BottomNavigation
+          showLabels={false}
+          sx={{
+            width: '100%',
+            position: 'fixed',
+            bottom: 0,
+            zIndex: 1000,
+            display: 'flex',
+            justifyContent: 'space-around'
+          }}
+          value={location.pathname}
+          onChange={(_, newValue) => {
+            navigate(newValue)
+          }}
+        >
+          {menuItems.map((item) => (
+            <BottomNavigationAction
+              key={item.id}
+              value={item.route}
+              icon={<Tooltip title={item.label} placement="right" key={item.id}>
+                <IconButton
+                  sx={{
+                    backgroundColor: "white",
+                    border:
+                      location.pathname === item.route
+                        ? "2px solid #333333"
+                        : null,
+                  }}
+                >
+                  {item.icon}
+                </IconButton>
+              </Tooltip>}
+            />
+          ))}
+        </BottomNavigation>
+      }
+
       {location.pathname === "/" ? (
         children
       ) : (
