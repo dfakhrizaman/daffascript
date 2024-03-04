@@ -127,7 +127,6 @@ const DetailModal = () => {
           }
         </Box>
         <Markdown>{content}</Markdown>
-        <TextButton sx={{ alignSelf: 'center' }} onClick={handleClose}>Close</TextButton>
       </Box>
     </Dialog>
   );
