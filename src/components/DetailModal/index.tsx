@@ -63,7 +63,7 @@ const DetailModal = () => {
       }
     };
 
-    if (!modalState.content.markdownContent) {
+    if (!modalState.content.markdownContent || modalState.content.markdownContent.length === 0) {
       return;
     }
 
