@@ -7,7 +7,6 @@ import { useAppSelector } from "../../redux/store";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import Markdown from "markdown-to-jsx";
-import TextButton from "../TextButton";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Close } from "@mui/icons-material";
 
