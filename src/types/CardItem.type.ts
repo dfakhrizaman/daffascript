@@ -6,4 +6,6 @@ export interface CardItem {
   companyImage: string;
   dateRange: string;
   description: string;
+  markdownContent?: string;
+  tags?: string[];
 }

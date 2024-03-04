@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import DetailItem from "../types/DetailItem.type";
+import { CardItem } from "../types/CardItem.type";
 
 interface DetailModal {
   open: boolean;
-  content: DetailItem;
+  content: DetailItem | CardItem;
 }
 
 const initialState: DetailModal = {

@@ -84,7 +84,7 @@ const DetailModal = () => {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Box sx={{ display: "flex" }}>
           {
-            modalState.content.tags.map((tag, index) => (
+            modalState.content.tags?.map((tag, index) => (
               renderTag(tag, index)
             ))
           }

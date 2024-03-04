@@ -14,7 +14,9 @@ export const experienceList: CardItem[] = [
     type: "Full-time",
     companyImage: bfiLogo,
     dateRange: 'Dec 2022 - Now',
-    description: 'Test Desc'
+    description: 'Test Desc',
+    markdownContent: 'bfi-finance.md',
+    tags: ["WEB", "REACT.JS", "MOBILE", "FINANCE"],
   },
   {
     id: 'ice-house',
@@ -23,7 +25,9 @@ export const experienceList: CardItem[] = [
     type: "Contract",
     companyImage: iceHouseLogo,
     dateRange: 'May 2022 - Dec 2022',
-    description: 'Test Desc'
+    description: 'Test Desc',
+    markdownContent: 'bfi-finance.md',
+    tags: ["WEB", "REACT.JS", "DASHBOARD"],
   },
   {
     id: 'adventure-care',
@@ -32,7 +36,9 @@ export const experienceList: CardItem[] = [
     type: "Part-time",
     companyImage: adventureCareLogo,
     dateRange: 'Aug 2022 - May 2023',
-    description: 'Test Desc'
+    description: 'Test Desc',
+    markdownContent: 'bfi-finance.md',
+    tags: ["MOBILE", "FLUTTER", "HEALTH"],
   },
   {
     id: 'lingotalk',
@@ -41,6 +47,8 @@ export const experienceList: CardItem[] = [
     type: "Intern",
     companyImage: lingoTalkLogo,
     dateRange: 'Oct 2021 - Feb 2022',
-    description: 'Test Desc'
+    description: 'Test Desc',
+    markdownContent: 'bfi-finance.md',
+    tags: ["MOBILE", "FLUTTER", "EDUCATION"],
   }
 ]

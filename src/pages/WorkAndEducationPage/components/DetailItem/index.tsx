@@ -2,6 +2,8 @@ import { Box, Typography } from "@mui/material";
 import useIsMobile from "../../../../hooks/useIsMobile";
 import { CardItem } from "../../../../types/CardItem.type";
 import TextButton from "../../../../components/TextButton";
+import { useDispatch } from "react-redux";
+import { setDetailModal } from "../../../../redux/detailModal.slice";
 
 interface Props {
   content: CardItem;
@@ -9,6 +11,17 @@ interface Props {
 
 const DetailItem = ({ content }: Props) => {
   const isMobile = useIsMobile();
+
+  const dispatch = useDispatch();
+
+  const handleOpenModal = () => {
+    dispatch(
+      setDetailModal({
+        open: true,
+        content: content,
+      })
+    );
+  };
 
   return (
     <Box>
@@ -48,7 +61,7 @@ const DetailItem = ({ content }: Props) => {
           </Typography>
         </Box>
       </Box>
-      <TextButton sx={{ marginTop: "10px" }}>See More</TextButton>
+      <TextButton sx={{ marginTop: "10px" }} onClick={handleOpenModal}>See More</TextButton>
     </Box>
   );
 };
