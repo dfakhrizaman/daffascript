@@ -9,6 +9,21 @@ import { useEffect, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Close } from "@mui/icons-material";
+import adventureCareMarkdown from '../../assets/adventure-care.md';
+import bfiFinanceMarkdown from '../../assets/bfi-finance.md';
+import iceHouseMarkdown from '../../assets/ice-house.md';
+import uiMarkdown from '../../assets/universitas-indonesia.md';
+import udeMarkdown from '../../assets/university-duisburg-essen.md';
+import fitnessCoachMarkdown from '../../assets/virtual-fitness-coach.md';
+
+const markdownMapper = {
+  'bfi-finance.md': bfiFinanceMarkdown,
+  'ice-house.md': iceHouseMarkdown,
+  'universitas-indonesia.md': uiMarkdown,
+  'university-duisburg-essen.md': udeMarkdown,
+  'virtual-fitness-coach.md': fitnessCoachMarkdown,
+  'adventure-care.md': adventureCareMarkdown,
+}
 
 function renderTag(tag: string, index: number) {
   return <Box key={tag} sx={{ display: "flex" }}>
@@ -52,9 +67,13 @@ const DetailModal = () => {
 
   useEffect(() => {
     const fetchMarkdownContent = async () => {
+      if (!modalState.content.markdownContent) {
+        return;
+      }
+
       try {
-        const module = await import(/* @vite-ignore */ '../../assets/' + modalState.content.markdownContent);
-        const response = await fetch(module.default);
+        const markdownContent = modalState.content.markdownContent as keyof typeof markdownMapper;
+        const response = await fetch(markdownMapper[markdownContent]);
         const text = await response.text();
 
         setContent(text)
