@@ -6,5 +6,5 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  assetsInclude: ['**/*.md']
+  assetsInclude: ['**/*.md', '**/**/*.md']
 })
