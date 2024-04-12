@@ -2,8 +2,9 @@ import { Typography } from "@mui/material";
 import TemplateCard from "../../../HomePage/components/TemplateCard";
 import universitasIndonesiaLogo from "../../../../assets/universitas-indonesia-logo.png";
 import duisburgEssenLogo from "../../../../assets/duisburg-essen-logo.jpeg";
-import DetailItem from "../DetailItem";
+
 import { CardItem } from "../../../../types/CardItem.type";
+import DetailItem from "../../../../components/DetailItem";
 
 const educationList: CardItem[] = [
   {

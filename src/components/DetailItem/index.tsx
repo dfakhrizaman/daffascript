@@ -1,9 +1,9 @@
 import { Box, Typography } from "@mui/material";
-import useIsMobile from "../../../../hooks/useIsMobile";
-import { CardItem } from "../../../../types/CardItem.type";
-import TextButton from "../../../../components/TextButton";
+import { setDetailModal } from "../../redux/detailModal.slice";
 import { useDispatch } from "react-redux";
-import { setDetailModal } from "../../../../redux/detailModal.slice";
+import useIsMobile from "../../hooks/useIsMobile";
+import { CardItem } from "../../types/CardItem.type";
+import TextButton from "../TextButton";
 
 interface Props {
   content: CardItem;
@@ -57,7 +57,7 @@ const DetailItem = ({ content }: Props) => {
             </Typography>
           </Box>
           <Typography fontSize="18px" color="#A1A1A1">
-            {content.role} ({content.type})
+            {content.role} {content.type ? `(${content.type})` : ''}
           </Typography>
         </Box>
       </Box>

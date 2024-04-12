@@ -1,24 +1,23 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
+import useIsMobile from "../../hooks/useIsMobile";
+import AchievementsGroupCard from "./AchievementsCard";
 
 const AchievementsPage = () => {
+  const isMobile = useIsMobile();
+
   return (
     <Stack
       spacing="32px"
       sx={{
-        height: "100vh",
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
+        flexGrow: 1,
+        paddingX: isMobile ? "18px" : "18%",
+        paddingY: "32px",
       }}
     >
-      <Typography variant="h1">WIP 🙏</Typography>
-      <Typography variant="h2">WIP 🙏</Typography>
-      <Typography variant="h2" fontSize="32px">
-        WIP 🙏
-      </Typography>
-      <Typography variant="h2" fontSize="24px">
-        WIP 🙏
-      </Typography>
+      <AchievementsGroupCard />
     </Stack>
   );
 };

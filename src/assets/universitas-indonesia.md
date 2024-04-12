@@ -1,10 +1,16 @@
 # Electrical Engineering Graduate at University of Indonesia
 
+<div style="display: flex; justify-content: center;">
+  <img src="/src/assets/universitas-indonesia-logo.png" alt="University of Indonesia" width="130px"/>
+</div>
+
 ## Overview
+
 Electrical Engineering bachelors graduate from the University of Indonesia, One of the oldest and best university in Indonesia. With focus on computer and software engineering as well as Internet of Things implementations.
 
 ## Achievements 🏆
-- **Finalist** at  Indonesia Medical Education and Research Institute Open Innovation 2022. 
+
+- **Finalist** at Indonesia Medical Education and Research Institute Open Innovation 2022.
 
 - UI Incubate 2022 **Grant Awardee**.
 
@@ -15,5 +21,5 @@ Electrical Engineering bachelors graduate from the University of Indonesia, One 
 #### [See more on the Achievement Page](/achievements)
 
 ## Bachelor's Thesis Topic 📜
-Implementation of Artificial Intelligence and Machine Learning with Tensorflow for Web-Based Automated Exercise Assistant.
 
+Implementation of Artificial Intelligence and Machine Learning with Tensorflow for Web-Based Automated Exercise Assistant.

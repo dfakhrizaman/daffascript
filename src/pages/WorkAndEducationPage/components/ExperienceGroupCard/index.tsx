@@ -1,8 +1,7 @@
 import { Typography } from "@mui/material";
 import TemplateCard from "../../../HomePage/components/TemplateCard";
 import { experienceList } from "./experienceList";
-import DetailItem from "../DetailItem";
-
+import DetailItem from "../../../../components/DetailItem";
 const ExperienceGroupCard = () => {
   return (
     <TemplateCard sx={{ width: "80%", maxWidth: "900px" }} height="auto">

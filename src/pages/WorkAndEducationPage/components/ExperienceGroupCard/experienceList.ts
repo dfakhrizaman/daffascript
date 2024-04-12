@@ -37,18 +37,18 @@ export const experienceList: CardItem[] = [
     companyImage: adventureCareLogo,
     dateRange: 'Aug 2022 - May 2023',
     description: 'Test Desc',
-    markdownContent: 'bfi-finance.md',
+    markdownContent: 'adventure-care.md',
     tags: ["MOBILE", "FLUTTER", "HEALTH"],
   },
   {
     id: 'lingotalk',
-    companyName: 'Lingo Talk',
+    companyName: 'LingoTalk',
     role: 'Mobile App Developer',
     type: "Intern",
     companyImage: lingoTalkLogo,
     dateRange: 'Oct 2021 - Feb 2022',
     description: 'Test Desc',
-    markdownContent: 'bfi-finance.md',
+    markdownContent: 'lingo-talk.md',
     tags: ["MOBILE", "FLUTTER", "EDUCATION"],
   }
 ]

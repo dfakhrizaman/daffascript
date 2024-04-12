@@ -15,6 +15,11 @@ import iceHouseMarkdown from '../../assets/ice-house.md';
 import uiMarkdown from '../../assets/universitas-indonesia.md';
 import udeMarkdown from '../../assets/university-duisburg-essen.md';
 import fitnessCoachMarkdown from '../../assets/virtual-fitness-coach.md';
+import lingotalkMarkdown from '../../assets/lingo-talk.md';
+import nusMarkdown from '../../assets/nus.md';
+import uiIncubateMarkdown from '../../assets/ui-incubate.md';
+import imeriMarkdown from '../../assets/imeri.md';
+import iotechMarkdown from '../../assets/iotech.md';
 
 const markdownMapper = {
   'bfi-finance.md': bfiFinanceMarkdown,
@@ -23,6 +28,11 @@ const markdownMapper = {
   'university-duisburg-essen.md': udeMarkdown,
   'virtual-fitness-coach.md': fitnessCoachMarkdown,
   'adventure-care.md': adventureCareMarkdown,
+  'lingo-talk.md': lingotalkMarkdown,
+  'nus.md': nusMarkdown,
+  'ui-incubate.md': uiIncubateMarkdown,
+  'imeri.md': imeriMarkdown,
+  'iotech.md': iotechMarkdown,
 }
 
 function renderTag(tag: string, index: number) {
@@ -97,9 +107,10 @@ const DetailModal = () => {
       maxWidth="md"
       PaperProps={{
         sx: {
-          padding: '32px',
+          padding: '24px',
           width: isMobile ? '100vw' : '50vw',
-          maxHeight: isMobile ? '100vh' : '80vh'
+          maxHeight: isMobile ? '100vh' : '80vh',
+          borderRadius: '16px'
         }
       }}
       fullScreen
@@ -128,22 +139,31 @@ const DetailModal = () => {
           marginY: isMobile ? '32px' : null
         }}
       >
-        <IconButton
+        <Box
           sx={{
-            alignSelf: 'end',
-            visibility: isMobile ? 'hidden' : 'inherit'
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
           }}
-          onClick={handleClose}
         >
-          <Close />
-        </IconButton>
-        <Box sx={{ display: "flex" }}>
-          {
-            modalState.content.tags?.map((tag, index) => (
-              renderTag(tag, index)
-            ))
-          }
+          <Box sx={{ display: "flex" }}>
+            {
+              modalState.content.tags?.map((tag, index) => (
+                renderTag(tag, index)
+              ))
+            }
+          </Box>
+          <IconButton
+            sx={{
+              alignSelf: 'end',
+              visibility: isMobile ? 'hidden' : 'inherit'
+            }}
+            onClick={handleClose}
+          >
+            <Close />
+          </IconButton>
         </Box>
+
         <Markdown>{content}</Markdown>
       </Box>
     </Dialog>
