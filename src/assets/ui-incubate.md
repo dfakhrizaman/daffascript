@@ -1,8 +1,8 @@
 # UI Incubate 2022 Grant Awardee
 
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
   <img src="/src/assets/universitas-indonesia-logo.png" alt="Universitas Indonesia Logo" width="130px"/>
-</div>
+</div> -->
 
 ## Achievement Overview
 

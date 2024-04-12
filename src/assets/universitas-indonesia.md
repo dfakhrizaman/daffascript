@@ -1,8 +1,8 @@
 # Electrical Engineering Graduate at University of Indonesia
 
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
   <img src="/src/assets/universitas-indonesia-logo.png" alt="University of Indonesia" width="130px"/>
-</div>
+</div> -->
 
 ## Overview
 

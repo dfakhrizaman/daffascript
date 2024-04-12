@@ -1,8 +1,8 @@
 # Mobile App Developer Intern at LingoTalk
 
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
   <img src="/src/assets/lingotalk-logo.png" alt="LingoTalk Logo" width="130px"/>
-</div>
+</div> -->
 
 ## Overview
 

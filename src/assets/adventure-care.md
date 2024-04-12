@@ -1,15 +1,16 @@
 # Software Engineer at AdventureCare.ID
 
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
   <img src="/src/assets/adventure-care-pitch.jpg" alt="Adventure Care Pitch" width="80%"/>
-</div>
+</div> -->
+
 ## Overview
 
 **Software Engineer and Product Owner** at AdventureCare.ID, a non-profit organization which aims to foster healthy habits in children with **Type 1 Diabetes** through fun games on their mobile apps. We are partnered with Ikadar Indonesia, Indonesia's largest diabetics community.
 
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
   <img src="/src/assets/adventure-care-ui.jpg" alt="Adventure Care UI" width="50%"/>
-</div>
+</div> -->
 
 ## Responsibilities
 

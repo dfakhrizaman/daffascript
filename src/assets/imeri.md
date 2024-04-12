@@ -1,8 +1,8 @@
 # Finalist at IMERI Open Innovation 2022
 
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
   <img src="/src/assets/imeri-open.jpg" alt="Indonesia Medical Education and Research Institute Logo" width="130px"/>
-</div>
+</div> -->
 
 ## Achievement Overview
 

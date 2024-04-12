@@ -1,8 +1,8 @@
 # Student Exchange Program at University of Duisburg Essen
 
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
   <img src="/src/assets/duisburg-essen-logo.jpeg" alt="University of Duisburg Essen Logo" width="130px"/>
-</div>
+</div> -->
 
 ## Overview
 

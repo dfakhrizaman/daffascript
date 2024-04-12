@@ -1,8 +1,8 @@
 # Software Engineer at Ice House
 
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
   <img src="/src/assets/ice-house-logo.jpeg" alt="Ice House Logo" width="130px"/>
-</div>
+</div> -->
 
 ## Overview
 
@@ -14,9 +14,9 @@
 
 - Collaborate with product team, UI/UX designer, QA, and other software engineers to deliver high-quality codes and features.
 
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
   <img src="/src/assets/ice-house-gathering.jpg" alt="Ice House Crew" width="80%"/>
-</div>
+</div> -->
 
 ## Tech Stacks
 

@@ -12,9 +12,9 @@ The app itself utilizes **TensorFlow** to help track the user's movement to serv
 
 - Maintain and improve app according to user inputs and advices.
 
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
   <img src="/src/assets/exercise-assistant-ui.jpg" alt="Virtual Assistant Coach UI" width="50%"/>
-</div>
+</div> -->
 
 ## Tech Stack
 

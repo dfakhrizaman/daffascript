@@ -6,9 +6,9 @@
 
 Working on several platforms with over **3000 users** spread across Indonesia.
 
-<div style="display: flex; justify-content: center;">
+<!-- <div style="display: flex; justify-content: center;">
 <img src="/src/assets/bfi-logo.jpeg" alt="BFI Logo" width="220px"/>
-</div>
+</div> -->
 
 ## Responsibilities
 

@@ -1,8 +1,9 @@
 # Best Paper Award and Top 3 Finalist at Ganesha IOTech Makeathon
 
+<!--
 <div style="display: flex; justify-content: center;">
   <img src="/src/assets/itb-logo.png" alt="Institut Teknologi Bandung Logo" width="130px"/>
-</div>
+</div> -->
 
 ## Achievement Overview
 
