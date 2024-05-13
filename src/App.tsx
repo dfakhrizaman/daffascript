@@ -7,10 +7,12 @@ import theme from "./theme";
 import routes from "./constants/routes";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   return (
     <Provider store={store}>
+      <Analytics />
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Routes>
