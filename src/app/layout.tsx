@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   description: 'Software Engineer',
   icons: {
     icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon-32x32.png',
   },
 };
 
