@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation'; // Import usePathname to get current route
 import {
   AppBar,
   Toolbar,
@@ -20,16 +21,33 @@ import Colors from '@/utils/colors';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  // Define routes with labels
+  const navItems = [
+    { label: 'Home', route: '/' },
+    { label: 'Blogs', route: '/blogs' },
+  ];
+
+  const handleNavigation = (route: string) => {
+    router.push(route);
   };
 
   return (
     <AppBar sx={styles.appbar} component="nav">
       <Toolbar sx={styles.toolbar}>
         {/* Brand Text */}
-        <Typography variant="h4" textTransform="none" sx={styles.textIcon}>
+        <Typography
+          onClick={() => router.push('/')}
+          variant="h4"
+          textTransform="none"
+          sx={styles.textIcon}
+        >
           daffascript
           <Typography
             variant="h4"
@@ -43,10 +61,21 @@ const Navbar = () => {
 
         {/* Desktop Buttons (Hidden on xs) */}
         <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
-          <Button aria-label="Home">Home</Button>
-          <Button aria-label="Works">Works</Button>
-          <Button aria-label="Blogs">Blogs</Button>
-          <Button aria-label="Contact">Contact</Button>
+          {navItems.map(({ label, route }) => (
+            <Button
+              key={route}
+              onClick={() => handleNavigation(route)}
+              aria-label={label}
+              sx={{
+                color: pathname === route ? Colors.black : 'inherit',
+                fontWeight: pathname === route ? 'bold' : 'normal',
+                backgroundColor:
+                  pathname === route ? Colors.red : 'transparent',
+              }}
+            >
+              {label}
+            </Button>
+          ))}
         </Box>
 
         {/* Burger Menu Button (Visible on xs) */}
@@ -73,11 +102,23 @@ const Navbar = () => {
         sx={{ '& .MuiDrawer-paper': { width: 250 } }}
       >
         <List>
-          {['Home', 'Works', 'Blog', 'Contact'].map((text) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton aria-label={`Go to ${text}`}>
-                <Typography sx={{ textTransform: 'uppercase' }}>
-                  {text}
+          {navItems.map(({ label, route }) => (
+            <ListItem key={route} disablePadding>
+              <ListItemButton
+                aria-label={`Go to ${label}`}
+                onClick={() => handleNavigation(route)}
+                sx={{
+                  backgroundColor:
+                    pathname === route ? Colors.red : 'transparent',
+                }}
+              >
+                <Typography
+                  sx={{
+                    textTransform: 'uppercase',
+                    fontWeight: pathname === route ? 'bold' : 'normal',
+                  }}
+                >
+                  {label}
                 </Typography>
               </ListItemButton>
             </ListItem>

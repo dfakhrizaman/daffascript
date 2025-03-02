@@ -3,7 +3,7 @@ import { TYPOGRAPHY } from '@/utils/typography';
 
 const styles = {
   container: {
-    marginTop: '32px',
+    paddingTop: '32px',
     marginBottom: '24px',
     display: 'flex',
     flexDirection: { xs: 'column', sm: 'row' },

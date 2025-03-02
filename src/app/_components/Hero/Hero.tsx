@@ -4,7 +4,7 @@ import { TYPOGRAPHY } from '@/utils/typography';
 
 const Hero = () => {
   return (
-    <Box id="heading-subheading" sx={styles.container}>
+    <Box id="hero" sx={styles.container}>
       <Box>
         <Box sx={styles.nameContainer}>
           <Typography variant="h1" sx={styles.nameUnderline}>

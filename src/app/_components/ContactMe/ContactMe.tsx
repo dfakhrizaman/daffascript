@@ -19,7 +19,7 @@ const ContactMe = () => {
   };
 
   return (
-    <Box sx={styles.container}>
+    <Box id="contact" sx={styles.container}>
       <Typography sx={styles.heading}>☎️ Get in touch</Typography>
       <Typography textAlign="justify">
         I’m always open to new opportunities and collaborations! Feel free to

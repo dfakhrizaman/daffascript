@@ -66,7 +66,7 @@ const ExperienceAndEducation = () => {
     };
 
   return (
-    <Box sx={{ marginTop: '32px' }}>
+    <Box id="experiences" sx={{ marginTop: '32px' }}>
       <Typography
         sx={{
           ...TYPOGRAPHY.SUBHEADING_20_MULTILINE,

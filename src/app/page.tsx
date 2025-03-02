@@ -24,6 +24,7 @@ export default function HomePage() {
           product-first mindset—because what we build isn’t just about code,{' '}
           <b>it’s about impact.</b> <br />
           <br />
+          Here are some of the stuff I’ve used.{' '}
           <b>Find out more about me below! 🚀</b>
         </Typography>
 
