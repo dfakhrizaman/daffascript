@@ -22,7 +22,7 @@ const lexend = Lexend({
 export const metadata: Metadata = {
   title: 'Daffa Fakhrizaman - Software Engineer',
   description:
-    'Experienced Software Engineer specializing in web and mobile development.',
+    'Daffa Fakhrizaman is a Software Engineer specializing in web and mobile development. Expert in React, Next.js, and Flutter. Passionate about building high-performance apps.',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Daffa Fakhrizaman - Software Engineer',
     description:
-      'Experienced Software Engineer specializing in web and mobile development.',
+      'Daffa Fakhrizaman is a Software Engineer specializing in web and mobile development. Expert in React, Next.js, and Flutter. Passionate about building high-performance apps.',
     url: 'https://daffascript.dev',
     siteName: 'Daffa Fakhrizaman',
     type: 'website',
