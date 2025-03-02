@@ -33,10 +33,17 @@ const ContactMe = () => {
           slotProps={{
             input: {
               readOnly: true,
+              'aria-label': 'Email address', // Hidden from UI but readable by screen readers
             },
           }}
         />
-        <IconButton onClick={handleCopy} size="small" sx={styles.iconButton}>
+
+        <IconButton
+          aria-label="Copy Email"
+          onClick={handleCopy}
+          size="small"
+          sx={styles.iconButton}
+        >
           {copied ? (
             <Check fontSize="small" color="primary" />
           ) : (
@@ -51,6 +58,7 @@ const ContactMe = () => {
 
       <Box sx={styles.otherSocials}>
         <IconButton
+          aria-label="Open Github"
           href="https://github.com/dfakhrizaman"
           target="_blank"
           sx={styles.iconButton}
@@ -60,10 +68,12 @@ const ContactMe = () => {
             alt="GitHub Icon"
             width={20}
             height={20}
+            priority
           />
         </IconButton>
 
         <IconButton
+          aria-label="Open LinkedIn"
           href="https://www.linkedin.com/in/daffa-fakhrizaman/"
           target="_blank"
           sx={styles.iconButton}
@@ -73,6 +83,7 @@ const ContactMe = () => {
             alt="GitHub Icon"
             width={20}
             height={20}
+            priority
           />
         </IconButton>
       </Box>

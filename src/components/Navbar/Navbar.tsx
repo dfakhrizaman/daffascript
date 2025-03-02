@@ -43,14 +43,15 @@ const Navbar = () => {
 
         {/* Desktop Buttons (Hidden on xs) */}
         <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
-          <Button>Home</Button>
-          <Button>Works</Button>
-          <Button>Blog</Button>
-          <Button>Contact</Button>
+          <Button aria-label="Home">Home</Button>
+          <Button aria-label="Works">Works</Button>
+          <Button aria-label="Blogs">Blogs</Button>
+          <Button aria-label="Contact">Contact</Button>
         </Box>
 
         {/* Burger Menu Button (Visible on xs) */}
         <IconButton
+          aria-label="Open Navbar"
           color="inherit"
           onClick={handleDrawerToggle}
           sx={{
@@ -74,7 +75,7 @@ const Navbar = () => {
         <List>
           {['Home', 'Works', 'Blog', 'Contact'].map((text) => (
             <ListItem key={text} disablePadding>
-              <ListItemButton>
+              <ListItemButton aria-label={`Go to ${text}`}>
                 <Typography sx={{ textTransform: 'uppercase' }}>
                   {text}
                 </Typography>

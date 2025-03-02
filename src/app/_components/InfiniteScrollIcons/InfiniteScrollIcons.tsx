@@ -6,21 +6,21 @@ import Image from 'next/image';
 import styles from './InfiniteScrollIcons.styles';
 
 const iconRoutes = [
-  '/icons/ic_flutter.svg',
-  '/icons/ic_react.svg',
-  '/icons/ic_go.svg',
-  '/icons/ic_typescript.svg',
-  '/icons/ic_javascript.svg',
-  '/icons/ic_nextjs.svg',
-  '/icons/ic_mongodb.svg',
-  '/icons/ic_aws.svg',
-  '/icons/ic_postgresql.svg',
-  '/icons/ic_python.svg',
-  '/icons/ic_docker.svg',
-  '/icons/ic_firebase.svg',
-  '/icons/ic_mui.svg',
-  '/icons/ic_nestjs.svg',
-  '/icons/ic_nodejs.svg',
+  { src: '/icons/ic_flutter.svg', alt: 'Flutter Logo' },
+  { src: '/icons/ic_react.svg', alt: 'React Logo' },
+  { src: '/icons/ic_go.svg', alt: 'Go (Golang) Logo' },
+  { src: '/icons/ic_typescript.svg', alt: 'TypeScript Logo' },
+  { src: '/icons/ic_javascript.svg', alt: 'JavaScript Logo' },
+  { src: '/icons/ic_nextjs.svg', alt: 'Next.js Logo' },
+  { src: '/icons/ic_mongodb.svg', alt: 'MongoDB Logo' },
+  { src: '/icons/ic_aws.svg', alt: 'AWS Logo' },
+  { src: '/icons/ic_postgresql.svg', alt: 'PostgreSQL Logo' },
+  { src: '/icons/ic_python.svg', alt: 'Python Logo' },
+  { src: '/icons/ic_docker.svg', alt: 'Docker Logo' },
+  { src: '/icons/ic_firebase.svg', alt: 'Firebase Logo' },
+  { src: '/icons/ic_mui.svg', alt: 'Material-UI (MUI) Logo' },
+  { src: '/icons/ic_nestjs.svg', alt: 'NestJS Logo' },
+  { src: '/icons/ic_nodejs.svg', alt: 'Node.js Logo' },
 ];
 
 const infiniteIcons = [...iconRoutes, ...iconRoutes];
@@ -39,7 +39,7 @@ const InfiniteScrollIcons = () => {
         responsive={responsive}
         infinite
         autoPlay
-        autoPlaySpeed={1} // Ensures smooth scrolling
+        autoPlaySpeed={1}
         customTransition="all 3s linear"
         transitionDuration={3000}
         additionalTransfrom={0}
@@ -49,16 +49,22 @@ const InfiniteScrollIcons = () => {
           'desktop',
           'superLargeDesktop',
         ]}
-        draggable={false} // Prevents user drag
-        swipeable={false} // Ensures smooth autoplay
-        keyBoardControl={false} // Prevents keyboard interactions from pausing it
-        pauseOnHover={false} // Ensures hover doesn't stop autoplay
-        shouldResetAutoplay={true} // Resets autoplay after interaction
-        focusOnSelect={false} // Prevents click from stopping autoplay
+        draggable={false}
+        swipeable={false}
+        keyBoardControl={false}
+        pauseOnHover={false}
+        shouldResetAutoplay={true}
+        focusOnSelect={false}
       >
-        {infiniteIcons.map((src, index) => (
+        {infiniteIcons.map((icon, index) => (
           <Box key={index} sx={{ textAlign: 'center' }}>
-            <Image src={src} alt="Icon" width={50} height={50} />
+            <Image
+              src={icon.src}
+              alt={icon.alt}
+              width={50}
+              height={50}
+              priority
+            />
           </Box>
         ))}
       </Carousel>

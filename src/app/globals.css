@@ -9,6 +9,7 @@ body {
   all: unset;
   margin: 0px;
   padding: 0px;
+  font-display: swap;
 }
 
 .plus-jakarta-sans {
