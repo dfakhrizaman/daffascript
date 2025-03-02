@@ -1,5 +1,3 @@
-'use client';
-
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Box from '@mui/material/Box';
@@ -24,26 +22,13 @@ const iconRoutes = [
   '/icons/ic_nodejs.svg',
 ];
 
-// Double the icons array to create a seamless infinite loop effect
 const infiniteIcons = [...iconRoutes, ...iconRoutes];
 
 const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 1200 },
-    items: 7,
-  },
-  desktop: {
-    breakpoint: { max: 1200, min: 1024 },
-    items: 6,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 768 },
-    items: 5,
-  },
-  mobile: {
-    breakpoint: { max: 768, min: 0 },
-    items: 4,
-  },
+  superLargeDesktop: { breakpoint: { max: 4000, min: 1200 }, items: 7 },
+  desktop: { breakpoint: { max: 1200, min: 1024 }, items: 6 },
+  tablet: { breakpoint: { max: 1024, min: 768 }, items: 5 },
+  mobile: { breakpoint: { max: 768, min: 0 }, items: 4 },
 };
 
 const InfiniteScrollIcons = () => {
@@ -53,19 +38,22 @@ const InfiniteScrollIcons = () => {
         responsive={responsive}
         infinite
         autoPlay
-        autoPlaySpeed={1} // Avoids jumpy behavior
-        customTransition="all 3s linear" // Smooth continuous scroll
-        transitionDuration={3000} // Matches speed with transition
-        additionalTransfrom={0} // Prevents unexpected jumps
+        autoPlaySpeed={1} // Ensures smooth scrolling
+        customTransition="all 3s linear"
+        transitionDuration={3000}
+        additionalTransfrom={0}
         removeArrowOnDeviceType={[
           'tablet',
           'mobile',
           'desktop',
           'superLargeDesktop',
         ]}
-        draggable={false} // Disables user drag to maintain smooth flow
-        swipeable={false} // Disables manual swiping to ensure continuous motion
-        keyBoardControl={false} // Prevents key-based interaction that might break the flow
+        draggable={false} // Prevents user drag
+        swipeable={false} // Ensures smooth autoplay
+        keyBoardControl={false} // Prevents keyboard interactions from pausing it
+        pauseOnHover={false} // Ensures hover doesn't stop autoplay
+        shouldResetAutoplay={true} // Resets autoplay after interaction
+        focusOnSelect={false} // Prevents click from stopping autoplay
       >
         {infiniteIcons.map((src, index) => (
           <Box key={index} sx={{ textAlign: 'center' }}>
