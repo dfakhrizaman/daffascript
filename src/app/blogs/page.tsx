@@ -23,9 +23,8 @@ const BlogsPage = () => {
         >
           <Typography variant="h1">📝 Blogs</Typography>
           <Typography>
-            Not much of a writer, but hey, here&apos;s where I share what
-            I&apos;ve learned, my experiences, and random thoughts on tech and
-            life. Take what you need!
+            I present to you, snippets of my thoughts. Make of them what you
+            will. Hope they help. 🐸😉
           </Typography>
         </Box>
 

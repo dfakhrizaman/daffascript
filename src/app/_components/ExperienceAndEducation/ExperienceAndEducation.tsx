@@ -30,7 +30,7 @@ const experiences = [
   },
   {
     id: 'panel4',
-    years: '2019 - 2024',
+    years: '2024',
     title: "Bachelor's in Engineering, Universitas Indonesia 🎓",
     details:
       'My journey in college was a blast! Learned a lot about engineering and building robust systems. Thanks to the pandemic I had a lot of time to learn software engineering by myself and. Also, got to meet a lot of great people and friends.',
@@ -45,9 +45,9 @@ const experiences = [
   {
     id: 'panel6',
     years: '2019',
-    title: 'Graduated High School',
+    title: 'Started my Bachelor’s @Universitas Indonesia',
     details:
-      "Not much to say here, but it was a great time. I haven't really figured out what I want to do with myself back then. 😅",
+      "Haven't really figured out what I want to do with myself at the time.",
   },
   {
     id: 'panel8',

@@ -23,7 +23,7 @@ const ContactMe = () => {
       <Typography sx={styles.heading}>☎️ Get in touch</Typography>
       <Typography textAlign="justify">
         I’m always open to new opportunities and collaborations! Feel free to
-        reach out to me. Looking forward to hearing from you! 💌
+        reach out to me. Looking forward to hearing from you!
       </Typography>
 
       <Box sx={styles.emailContainer}>
