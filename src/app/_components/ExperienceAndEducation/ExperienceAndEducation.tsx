@@ -12,7 +12,7 @@ const experiences = [
     years: '2024 - Now',
     title: 'Software Engineer @Finku 🚀',
     details:
-      'An exciting journey in fintech, where I got to collaborate with a lot of talented & creative people. Shipped new products, optimized app performances and improved UXs. A company with a lot of alignment in values and visions with me.',
+      'An exciting journey in fintech, where I got to collaborate with a lot of talented & creative people. Shipped new products, optimized app performances, and improved UXs. A company with a lot of alignment in values and visions with me.',
   },
   {
     id: 'panel2',
@@ -33,7 +33,7 @@ const experiences = [
     years: '2024',
     title: "Bachelor's in Engineering, Universitas Indonesia 🎓",
     details:
-      'My journey in college was a blast! Learned a lot about engineering and building robust systems. Thanks to the pandemic I had a lot of time to learn software engineering by myself and. Also, got to meet a lot of great people and friends.',
+      'My journey in college was a blast! Learned a lot about engineering and building robust systems. Thanks to the pandemic I had a lot of time to learn software engineering by myself. Also, got to meet a lot of great people and friends.',
   },
   {
     id: 'panel5',
