@@ -3,6 +3,14 @@ import { TYPOGRAPHY } from '@/utils/typography';
 import { SxProps, Theme } from '@mui/material';
 
 const styles = {
+  container: {
+    maxWidth: '768px',
+    width: '100%',
+    position: 'sticky',
+    top: 0,
+    backgroundColor: Colors.background,
+    zIndex: 1000,
+  },
   appbar: {
     borderBottom: `1px solid ${Colors.black}`,
     display: 'flex',

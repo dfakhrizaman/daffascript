@@ -40,7 +40,7 @@ const Navbar = () => {
   };
 
   return (
-    <Box sx={{ maxWidth: '768px', width: '100%' }}>
+    <Box sx={styles.container}>
       <AppBar sx={styles.appbar} component="nav">
         <Toolbar sx={styles.toolbar}>
           {/* Brand Text */}

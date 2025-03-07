@@ -31,9 +31,7 @@ export default async function BlogPage(props: { params: Params }) {
 
   return (
     <Box sx={{ marginTop: '32px', paddingRight: '16px', paddingLeft: '16px' }}>
-      <Typography>
-        <strong>Last Updated:</strong> {blog.lastUpdated}
-      </Typography>
+      <Typography>{blog.lastUpdated}</Typography>
       <Typography>
         <strong>Tags:</strong> {blog.tags.join(', ')}
       </Typography>
