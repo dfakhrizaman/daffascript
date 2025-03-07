@@ -30,7 +30,7 @@ export default async function BlogPage(props: { params: Params }) {
   if (!blog) return notFound();
 
   return (
-    <Box sx={{ marginTop: '32px' }}>
+    <Box sx={{ marginTop: '32px', paddingRight: '16px', paddingLeft: '16px' }}>
       <Typography>
         <strong>Last Updated:</strong> {blog.lastUpdated}
       </Typography>
