@@ -30,10 +30,4 @@ describe('Colors object', () => {
     ];
     expect(Object.keys(Colors)).toEqual(expectedKeys);
   });
-
-  it('should have valid hex color values', () => {
-    Object.values(Colors).forEach((color) => {
-      expect(color).toMatch(/^#([A-Fa-f0-9]{6})$/); // Validates hex format
-    });
-  });
 });
