@@ -1,3 +1,4 @@
+import { alpha } from '@mui/material';
 import Colors from './colors';
 
 describe('Colors object', () => {
@@ -11,6 +12,7 @@ describe('Colors object', () => {
       blue: '#82BBF2',
       red: '#EC7E5C',
       yellow: '#FEFED2',
+      gray: alpha('#1B2118', 0.15),
     });
   });
 
@@ -24,6 +26,7 @@ describe('Colors object', () => {
       'blue',
       'red',
       'yellow',
+      'gray',
     ];
     expect(Object.keys(Colors)).toEqual(expectedKeys);
   });
