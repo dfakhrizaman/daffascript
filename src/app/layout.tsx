@@ -4,6 +4,8 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { Lexend, Plus_Jakarta_Sans } from 'next/font/google';
 import { Box, CssBaseline, ThemeProvider } from '@mui/material';
 import theme from '@/utils/theme';
+import Navbar from '@/components/Navbar/Navbar';
+import Footer from '@/components/Footer/Footer';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -109,7 +111,9 @@ export default function RootLayout({
                 alignItems: 'center',
               }}
             >
-              {children}
+              <Navbar />
+              <Box sx={{ maxWidth: '768px', width: '100%' }}>{children}</Box>
+              <Footer />
             </Box>
           </ThemeProvider>
         </AppRouterCacheProvider>

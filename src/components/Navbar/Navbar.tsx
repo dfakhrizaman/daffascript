@@ -36,96 +36,107 @@ const Navbar = () => {
 
   const handleNavigation = (route: string) => {
     router.push(route);
+    setMobileOpen(false);
   };
 
   return (
-    <AppBar sx={styles.appbar} component="nav">
-      <Toolbar sx={styles.toolbar}>
-        {/* Brand Text */}
-        <Typography
-          onClick={() => router.push('/')}
-          variant="h4"
-          textTransform="none"
-          sx={styles.textIcon}
-        >
-          daffascript
+    <Box sx={{ maxWidth: '768px', width: '100%' }}>
+      <AppBar sx={styles.appbar} component="nav">
+        <Toolbar sx={styles.toolbar}>
+          {/* Brand Text */}
           <Typography
+            onClick={() => router.push('/')}
             variant="h4"
-            component="span"
-            sx={TYPOGRAPHY.SUBHEADING_18_BOLD}
-            color={Colors.red}
+            textTransform="none"
+            sx={styles.textIcon}
           >
-            .dev
-          </Typography>
-        </Typography>
-
-        {/* Desktop Buttons (Hidden on xs) */}
-        <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
-          {navItems.map(({ label, route }) => (
-            <Button
-              key={route}
-              onClick={() => handleNavigation(route)}
-              aria-label={label}
-              sx={{
-                color: pathname === route ? Colors.black : 'inherit',
-                fontWeight: pathname === route ? 'bold' : 'normal',
-                backgroundColor:
-                  pathname === route ? Colors.red : 'transparent',
-              }}
+            daffascript
+            <Typography
+              variant="h4"
+              component="span"
+              sx={TYPOGRAPHY.SUBHEADING_18_BOLD}
+              color={Colors.red}
             >
-              {label}
-            </Button>
-          ))}
-        </Box>
+              .dev
+            </Typography>
+          </Typography>
 
-        {/* Burger Menu Button (Visible on xs) */}
-        <IconButton
-          aria-label="Open Navbar"
-          color="inherit"
-          onClick={handleDrawerToggle}
-          sx={{
-            display: { sm: 'none', xs: 'block' },
-            width: '40px',
-            height: '40px',
-            marginRight: '8px',
-          }}
-        >
-          <Menu />
-        </IconButton>
-      </Toolbar>
+          {/* Desktop Buttons (Hidden on xs) */}
+          <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+            {navItems.map(({ label, route }) => {
+              const isActive =
+                route === '/' ? pathname === '/' : pathname.startsWith(route);
 
-      {/* Mobile Drawer (Sidebar) */}
-      <Drawer
-        anchor="right"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        sx={{ '& .MuiDrawer-paper': { width: 250 } }}
-      >
-        <List>
-          {navItems.map(({ label, route }) => (
-            <ListItem key={route} disablePadding>
-              <ListItemButton
-                aria-label={`Go to ${label}`}
-                onClick={() => handleNavigation(route)}
-                sx={{
-                  backgroundColor:
-                    pathname === route ? Colors.red : 'transparent',
-                }}
-              >
-                <Typography
+              return (
+                <Button
+                  key={route}
+                  onClick={() => handleNavigation(route)}
+                  aria-label={label}
                   sx={{
-                    textTransform: 'uppercase',
-                    fontWeight: pathname === route ? 'bold' : 'normal',
+                    color: isActive ? Colors.black : 'inherit',
+                    fontWeight: isActive ? 'bold' : 'normal',
+                    backgroundColor: isActive ? Colors.red : 'transparent',
                   }}
                 >
                   {label}
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-    </AppBar>
+                </Button>
+              );
+            })}
+          </Box>
+
+          {/* Burger Menu Button (Visible on xs) */}
+          <IconButton
+            aria-label="Open Navbar"
+            color="inherit"
+            onClick={handleDrawerToggle}
+            sx={{
+              display: { sm: 'none', xs: 'block' },
+              width: '40px',
+              height: '40px',
+              marginRight: '8px',
+            }}
+          >
+            <Menu />
+          </IconButton>
+        </Toolbar>
+
+        {/* Mobile Drawer (Sidebar) */}
+        <Drawer
+          anchor="right"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          sx={{ '& .MuiDrawer-paper': { width: 250 } }}
+        >
+          <List>
+            {navItems.map(({ label, route }) => {
+              const isActive =
+                route === '/' ? pathname === '/' : pathname.startsWith(route);
+
+              return (
+                <ListItem key={route} disablePadding>
+                  <ListItemButton
+                    aria-label={`Go to ${label}`}
+                    onClick={() => handleNavigation(route)}
+                    sx={{
+                      backgroundColor: isActive ? Colors.red : 'transparent',
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        textTransform: 'uppercase',
+                        fontWeight: isActive ? 'bold' : 'normal',
+                      }}
+                    >
+                      {label}
+                    </Typography>
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </List>
+        </Drawer>
+      </AppBar>
+    </Box>
   );
 };
 

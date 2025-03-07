@@ -4,6 +4,7 @@ import 'react-multi-carousel/lib/styles.css';
 import Box from '@mui/material/Box';
 import Image from 'next/image';
 import styles from './InfiniteScrollIcons.styles';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const iconRoutes = [
   { src: '/icons/ic_flutter.svg', alt: 'Flutter Logo' },
@@ -33,6 +34,38 @@ const responsive = {
 };
 
 const InfiniteScrollIcons = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+  if (isMobile) {
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          overflowX: 'auto',
+          gap: 2,
+          py: 1,
+          px: 2,
+          scrollbarWidth: 'thin', // Firefox
+          '&::-webkit-scrollbar': { height: 4 }, // Chrome/Safari
+          '&::-webkit-scrollbar-thumb': { background: '#ccc', borderRadius: 2 },
+        }}
+      >
+        {iconRoutes.map((icon, index) => (
+          <Box key={index} sx={{ flex: '0 0 auto', textAlign: 'center' }}>
+            <Image
+              src={icon.src}
+              alt={icon.alt}
+              width={50}
+              height={50}
+              priority
+            />
+          </Box>
+        ))}
+      </Box>
+    );
+  }
+
   return (
     <Box sx={styles.container}>
       <Carousel

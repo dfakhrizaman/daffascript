@@ -1,5 +1,3 @@
-import Footer from '@/components/Footer/Footer';
-import Navbar from '@/components/Navbar/Navbar';
 import Colors from '@/utils/colors';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
@@ -7,8 +5,7 @@ import BlogThumbnailSkeleton from './_components/BlogThumbnailSkeleton/BlogThumb
 
 const BlogsPage = () => {
   return (
-    <Box sx={{ maxWidth: '768px', width: '100%' }}>
-      <Navbar />
+    <>
       <Box component="main" sx={{ marginRight: '24px', marginLeft: '24px' }}>
         <Box
           id="heading"
@@ -40,8 +37,7 @@ const BlogsPage = () => {
           <BlogThumbnailSkeleton />
         </Box>
       </Box>
-      <Footer />
-    </Box>
+    </>
   );
 };
 

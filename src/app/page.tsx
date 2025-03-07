@@ -1,16 +1,13 @@
-import Navbar from '@/components/Navbar/Navbar';
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import InfiniteScrollIcons from './_components/InfiniteScrollIcons/InfiniteScrollIcons';
 import Hero from './_components/Hero/Hero';
-import Footer from '@/components/Footer/Footer';
 import ExperienceAndEducation from './_components/ExperienceAndEducation/ExperienceAndEducation';
 import ContactMe from './_components/ContactMe/ContactMe';
 
 export default function HomePage() {
   return (
-    <Box sx={{ maxWidth: '768px', width: '100%' }}>
-      <Navbar />
+    <>
       <Box component="main" sx={{ marginRight: '24px', marginLeft: '24px' }}>
         <Hero />
 
@@ -32,7 +29,6 @@ export default function HomePage() {
         <ExperienceAndEducation />
         <ContactMe />
       </Box>
-      <Footer />
-    </Box>
+    </>
   );
 }
