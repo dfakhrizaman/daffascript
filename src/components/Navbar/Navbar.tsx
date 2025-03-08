@@ -61,7 +61,6 @@ const Navbar = () => {
             </Typography>
           </Typography>
 
-          {/* Desktop Buttons (Hidden on xs) */}
           <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
             {navItems.map(({ label, route }) => {
               const isActive =
