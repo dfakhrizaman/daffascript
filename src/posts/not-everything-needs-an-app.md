@@ -1,4 +1,4 @@
-# Not Everything Needs an App: Tech, Activism, and Stepping Outside
+# Not Everything Needs an App: Tech, Activism, and Touching Grass
 
 ## Do We Really Need Another App for That?
 

@@ -6,6 +6,7 @@ import { Box, CssBaseline, ThemeProvider } from '@mui/material';
 import theme from '@/utils/theme';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
+import { Analytics } from '@vercel/analytics/next';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -117,6 +118,7 @@ export default function RootLayout({
             </Box>
           </ThemeProvider>
         </AppRouterCacheProvider>
+        <Analytics />
       </body>
     </html>
   );
