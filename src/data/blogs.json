@@ -2,9 +2,17 @@
   {
     "title": "Not Everything Needs an App: Tech, Activism, and Touching Grass",
     "subtitle": "Why software isn't always the answer—and how tech workers can engage with real-world activism.",
-    "lastUpdated": "8/03/2025",
+    "lastUpdated": "08/03/2025",
     "content": "not-everything-needs-an-app.md",
     "tags": ["Tech", "Software", "Social Impact"],
     "slug": "not-everything-needs-an-app"
+  },
+  {
+    "title": "Digital Twins in Healthcare: A Game Changer for Indonesia's Medical Field",
+    "subtitle": "Discover how Digital Twins are paving the way for smarter, more accessible healthcare across Indonesia’s vast and diverse regions.",
+    "lastUpdated": "25/04/2025",
+    "content": "digital-twins-in-healthcare.md",
+    "tags": ["Tech", "Digital Twins", "Healthcare"],
+    "slug": "digital-twins-in-healthcare"
   }
 ]
