@@ -40,7 +40,7 @@ const experiences = [
     years: '2021 - 2022',
     title: 'Mobile App Developer Intern @LingoTalk',
     details:
-      'Brought fun to language learning by building new features for LingoTalk’s mobile app. Created the LingoTrivia gamification, added internationalization (i18n) support, and followed OOP best practices. A great hands-on experience in Flutter development!',
+      'Brought fun to language learning by building new features for LingoTalk’s mobile app. Contributed to LingoTrivia gamification, added internationalization (i18n) support, and followed OOP best practices. A great hands-on experience in Flutter development!',
   },
   {
     id: 'panel6',
