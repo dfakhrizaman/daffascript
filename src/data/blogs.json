@@ -14,5 +14,13 @@
     "content": "digital-twins-in-healthcare.md",
     "tags": ["Tech", "Digital Twins", "Healthcare"],
     "slug": "digital-twins-in-healthcare"
+  },
+  {
+    "title": "Test-Driven Development on Game of Life: Detroit vs London Schools in Action",
+    "subtitle": "Read about the heavyweights of TDD styles, Detroit (Classical) and London (Mockist).",
+    "lastUpdated": "03/05/2025",
+    "content": "tdd-detroit-vs-london.md",
+    "tags": ["Tech", "Test-Driven Development", "Game of Life"],
+    "slug": "tdd-detroit-vs-london"
   }
 ]
