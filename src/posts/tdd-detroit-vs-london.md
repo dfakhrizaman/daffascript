@@ -39,7 +39,7 @@ The way we write tests mostly comes down to how we approach a problem. In the TD
 We’re coding in Java with JUnit, just to keep things clean and familiar. Here's the directory structure:
 
 ```
-com.gojek.gameoflife
+com.company.gameoflife
 ├── model
 │   └── Cell.java
 ├── service
