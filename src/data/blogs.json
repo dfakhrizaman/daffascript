@@ -22,5 +22,13 @@
     "content": "tdd-detroit-vs-london.md",
     "tags": ["Tech", "Test-Driven Development", "Game of Life"],
     "slug": "tdd-detroit-vs-london"
+  },
+  {
+    "title": "🧱 DevOps Logging vs Product Analytics: What’s the Difference?",
+    "subtitle": "Not all logs are created equal. Here's a clear breakdown of DevOps logging vs product analytics, when to use each, and why both matter.",
+    "lastUpdated": "13/05/2025",
+    "content": "logging-vs-product-analytics.md",
+    "tags": ["Tech", "DevOps", "Logging", "Observability"],
+    "slug": "logging-vs-product-analytics"
   }
 ]
