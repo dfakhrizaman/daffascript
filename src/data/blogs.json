@@ -38,5 +38,13 @@
     "content": "ci-for-frontend-with-tdd.md",
     "tags": ["Frontend", "CI/CD", "Testing", "TDD", "DevOps"],
     "slug": "ci-for-frontend-with-tdd"
+  },
+  {
+    "title": "Setting Up Pre-Commit Hooks in Android Studio for a Cleaner Codebase",
+    "subtitle": "Automate formatting, lint, and tests in Android Studio before every commit with Git hooks.",
+    "lastUpdated": "22/05/2025",
+    "content": "setup-pre-commit-android.md",
+    "tags": ["Android", "Git", "Productivity", "Best Practices"],
+    "slug": "setup-pre-commit-android"
   }
 ]
