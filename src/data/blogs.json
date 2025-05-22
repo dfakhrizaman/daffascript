@@ -30,5 +30,13 @@
     "content": "logging-vs-product-analytics.md",
     "tags": ["Tech", "DevOps", "Logging", "Observability"],
     "slug": "logging-vs-product-analytics"
+  },
+  {
+    "title": "CI for Frontend Developers with TDD: Ship With Confidence",
+    "subtitle": "Learn how to combine Continuous Integration and Test-Driven Development to build reliable frontend apps—fast.",
+    "lastUpdated": "16/05/2025",
+    "content": "ci-for-frontend-with-tdd.md",
+    "tags": ["Frontend", "CI/CD", "Testing", "TDD", "DevOps"],
+    "slug": "ci-for-frontend-with-tdd"
   }
 ]
