@@ -51,7 +51,7 @@ exit 0
 
 If you’re not using a formatter yet, install [Spotless](https://github.com/diffplug/spotless) or [ktlint](https://github.com/pinterest/ktlint).
 
-### Using Spotless with Kotlin:
+### Using Spotless with Kotlin
 
 Add to your `build.gradle` (project-level):
 
@@ -101,9 +101,9 @@ git commit -m "Clean code!"
 
 ## Benefits of Using Pre-Commit Hooks
 
-- Enforces formatting and linting  
-- Prevents bad code from reaching the repository  
-- Saves time during code reviews  
+- Enforces formatting and linting
+- Prevents bad code from reaching the repository
+- Saves time during code reviews
 - Encourages clean and consistent code
 
 ---

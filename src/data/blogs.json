@@ -46,5 +46,13 @@
     "content": "setup-pre-commit-android.md",
     "tags": ["Android", "Git", "Productivity", "Best Practices"],
     "slug": "setup-pre-commit-android"
+  },
+  {
+    "title": "Demystifying Android Contexts: App, Activity, Base, and Beyond",
+    "subtitle": "Learn about what context is in Android Development and its various types.",
+    "lastUpdated": "23/05/2025",
+    "content": "android-contexts.md",
+    "tags": ["Android", "Context", "Best Practices"],
+    "slug": "android-contexts"
   }
 ]
