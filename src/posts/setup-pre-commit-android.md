@@ -1,179 +1,113 @@
-# Demystifying Android Contexts: App, Activity, Base, and Beyond
+# Setting Up Pre-Commit Hooks in Android Studio for a Cleaner Codebase
 
-When building Android apps, one of the most used—but least understood—concepts is the `Context`. It powers nearly everything from accessing system services, starting activities, inflating layouts, and more. But there’s more than one type of `Context`, and misusing them can lead to memory leaks, crashes, and subtle bugs.
+Android Studio is a powerful IDE, but it doesn't enforce code style or checks before commits by default. This is where **Git pre-commit hooks** come in. With a pre-commit hook, you can automate tasks like code formatting, lint checks, or running unit tests — helping your team avoid messy commits.
 
-In this post, we’ll break down the different types of `Context` in Android—`ApplicationContext`, `ActivityContext`, `BaseContext`, and more—using practical examples to help you use them the right way.
-
----
-
-## What is a Context?
-
-A `Context` is an abstract class in Android that provides access to application-specific resources and classes, as well as up-calls for application-level operations such as launching activities, broadcasting, and receiving intents.
+In this guide, you’ll learn how to set up a pre-commit hook in an Android Studio project that runs **code formatting** and **Lint** checks before each commit.
 
 ---
 
-## Types of Context in Android
+## Step 1: Create a `.git/hooks/pre-commit` Script
 
-### 1. **Application Context**
+Git hooks are shell scripts stored inside the `.git/hooks/` directory of your project.
 
-The application context is tied to the lifecycle of the app. It’s a singleton instance accessible anywhere in your app and is best used when you need a context that outlives any activity or component.
+1. Open your terminal and navigate to your Android project directory.
+2. Create a `pre-commit` file:
 
-**Use Cases:**
-- Accessing resources globally
-- Initializing singletons
-- Starting services
-- Registering broadcast receivers that live as long as the app
-
-**How to get it:**
-
-```kotlin
-val appContext = applicationContext
+```bash
+touch .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
 ```
 
-Or, if you're in a class without direct access:
+3. Open it in your editor and add the following:
 
-```kotlin
-val appContext = context.applicationContext
+```bash
+#!/bin/bash
+echo "Running pre-commit checks..."
+
+# Format code using Gradle
+./gradlew spotlessApply
+
+# Run Lint
+./gradlew lintDebug
+
+# Optional: Run unit tests
+# ./gradlew testDebugUnitTest
+
+# Check for errors
+if [ $? -ne 0 ]; then
+  echo "Pre-commit hook failed. Fix the issues and try again."
+  exit 1
+fi
+
+echo "Pre-commit checks passed!"
+exit 0
 ```
 
-**Example:**
+> Replace `spotlessApply` with `ktlintFormat` or your preferred formatter if you’re not using Spotless.
 
-```kotlin
-class MyManager(context: Context) {
-    private val appContext = context.applicationContext
+---
 
-    fun showToast() {
-        Toast.makeText(appContext, "This is safe!", Toast.LENGTH_SHORT).show()
+## Step 2: Set Up a Formatter (e.g. Spotless or ktlint)
+
+If you’re not using a formatter yet, install [Spotless](https://github.com/diffplug/spotless) or [ktlint](https://github.com/pinterest/ktlint).
+
+### Using Spotless with Kotlin
+
+Add to your `build.gradle` (project-level):
+
+```groovy
+plugins {
+    id 'com.diffplug.spotless' version '6.25.0'
+}
+```
+
+And in your `build.gradle` (app/module level):
+
+```groovy
+spotless {
+    kotlin {
+        target '**/*.kt'
+        ktlint("0.50.0").userData(['indent_size': '4', 'continuation_indent_size': '4'])
     }
 }
 ```
 
----
+Then run:
 
-### 2. **Activity Context**
-
-This is tied to the lifecycle of an `Activity`. It includes theming, UI, and window-level operations, and is essential when you need access to the currently displayed UI.
-
-**Use Cases:**
-- Inflating layout XMLs
-- Creating Dialogs
-- Launching Activities
-- Accessing Views
-
-**How to get it:**
-
-```kotlin
-val activityContext = this
-```
-
-**Example:**
-
-```kotlin
-val dialog = AlertDialog.Builder(this) // using Activity context
-    .setMessage("Hello")
-    .setPositiveButton("OK", null)
-    .create()
-dialog.show()
+```bash
+./gradlew spotlessApply
 ```
 
 ---
 
-### 3. **Base Context**
+## Step 3: Prevent Committing Broken Code
 
-Every `ContextWrapper` has a `baseContext`, which is the actual context it wraps. You usually encounter it when overriding `attachBaseContext()` in custom components.
+Try committing without fixing your code. If formatting or lint fails, Git will reject the commit:
 
-**Use Cases:**
-- Wrapping or replacing the context before an Activity is created
-- Injecting locale, themes, or other configurations
+```bash
+git commit -m "Your message"
+# > Pre-commit hook failed. Fix the issues and try again.
+```
 
-**Example:**
+Once fixed:
 
-```kotlin
-override fun attachBaseContext(newBase: Context) {
-    val customContext = MyCustomContextWrapper.wrap(newBase)
-    super.attachBaseContext(customContext)
-}
+```bash
+git add .
+git commit -m "Clean code!"
+# > Pre-commit checks passed!
 ```
 
 ---
 
-### 4. **Service Context**
+## Benefits of Using Pre-Commit Hooks
 
-A `Service` is also a `Context`, but like `Application`, it is long-lived. Don’t use it for UI-bound operations.
-
-**Use Cases:**
-- Running background tasks
-- System interactions without UI
-
-**Example:**
-
-```kotlin
-class MyService : Service() {
-    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Toast.makeText(this, "Running in background", Toast.LENGTH_SHORT).show()
-        return START_STICKY
-    }
-}
-```
+- Enforces formatting and linting
+- Prevents bad code from reaching the repository
+- Saves time during code reviews
+- Encourages clean and consistent code
 
 ---
 
-## What Does "Inflating" Mean?
+Pre-commit hooks are a simple yet powerful way to keep your Android codebase healthy. Combine it with proper CI/CD and you’re on your way to bulletproof development.
 
-In Android, **inflating** means converting an XML layout file (like `R.layout.activity_main`) into actual **View objects** in memory that your app can use and display on screen.
-
-### Example:
-
-```kotlin
-val view = LayoutInflater.from(context).inflate(R.layout.custom_button, parent, false)
-```
-
-Now `view` is a real `Button` (or whatever layout you defined), and you can use it in your app.
-
----
-
-## Common Mistakes with Context
-
-### 1. **Memory Leaks**
-
-```kotlin
-object MySingleton {
-    var context: Context? = null // bad!
-}
-```
-
-If you pass an `Activity` context here, and it never gets cleared, the Activity will never be garbage collected.
-
-**Fix:** Always use `applicationContext` for long-lived instances.
-
----
-
-### 2. **Wrong Context for UI**
-
-```kotlin
-val inflater = LayoutInflater.from(applicationContext)
-inflater.inflate(R.layout.dialog_layout, null) // may crash or look wrong
-```
-
-**Fix:** Always use the `Activity` context for inflating views:
-
-```kotlin
-LayoutInflater.from(this).inflate(...)
-```
-
----
-
-## Summary
-
-| Context Type     | Lifecycle          | Safe for UI? | Typical Use                               |
-|------------------|--------------------|--------------|--------------------------------------------|
-| Application      | App-wide           | No           | Singletons, global services, analytics     |
-| Activity         | Activity lifecycle | Yes          | UI, views, dialogs                         |
-| Base Context     | Wrapped context    | Depends      | Localization, theming                      |
-| Service          | Service lifecycle  | No           | Background tasks                           |
-
----
-
-## Final Thoughts
-
-Understanding context in Android is crucial for memory efficiency and good architecture. A good rule of thumb: **use the shortest-lived context necessary**. If you’re in doubt, think about how long the component you're using will live—and match it with the appropriate context.
+Want to automate even more? Try pre-push hooks for running tests or integrating with your CI pipeline.g
