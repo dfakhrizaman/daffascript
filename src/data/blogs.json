@@ -67,7 +67,7 @@
   "title": "Mastering Higher-Order Functions in Kotlin for Android Development",
   "subtitle": "Learn how higher-order functions can clean up your code, reduce boilerplate, and boost reusability in Android apps.",
   "lastUpdated": "26/05/2025",
-  "content": "kotlin-higher-order-functions.md",
+  "content": "kotlin-higher-order-function.md",
   "tags": ["Kotlin", "Android", "Functions", "Best Practices"],
   "slug": "higher-order-functions-kotlin"
 }
