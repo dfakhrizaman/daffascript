@@ -46,5 +46,13 @@
     "content": "setup-pre-commit-android.md",
     "tags": ["Android", "Git", "Productivity", "Best Practices"],
     "slug": "setup-pre-commit-android"
+  },
+  {
+    "title": "MVI for React Developers: Bringing Redux-Like Architecture to Android (XML + Kotlin)",
+    "subtitle": "Learn how MVI in Android mirrors Redux patterns and why it’s the ideal architecture for React developers transitioning to native mobile.",
+    "lastUpdated": "25/05/2025",
+    "content": "mvi-for-react-developer.md",
+    "tags": ["Android", "Architecture", "Kotlin", "React", "MVI"],
+    "slug": "mvi-for-react-developer"
   }
 ]
