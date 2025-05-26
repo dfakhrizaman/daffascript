@@ -2,7 +2,7 @@
 
 If you're coming from a React or Redux background and starting Android development (using Kotlin and XML, no Jetpack Compose), you might feel like you’ve stepped into a world that still uses adapters, ViewBindings, and a lot of lifecycle boilerplate.
 
-But here’s the good news: **MVI (Model-View-Intent)** is the architectural pattern that will feel the most *familiar* to you—almost like bringing a Redux store into the Android world.
+But here’s the good news: **MVI (Model-View-Intent)** is the architectural pattern that will feel the most *familiar* to you, almost like bringing a Redux store into the Android world.
 
 Let’s break down how MVI works in Android and why it clicks so well with React developers.
 
@@ -63,7 +63,7 @@ Then in your `Activity`, you observe state changes and bind the new state to you
 
 In MVI, the state lives inside a **ViewModel**, scoped to your screen. It survives configuration changes (like screen rotations), and you always work with **one single state object** at a time.
 
-This central state store behaves like a **scoped singleton**—consistent, reliable, and reactive.
+This central state store behaves like a **scoped singleton**, consistent, reliable, and reactive.
 
 ## Benefits for React Devs
 
@@ -83,7 +83,7 @@ This central state store behaves like a **scoped singleton**—consistent, relia
 
 For a React developer, MVI in Android will feel like second nature. Think of the ViewModel as your Redux store, the XML as your JSX, and intents as your dispatches.
 
-The best part? You get all the power of Android’s platform—background services, platform APIs, offline support—while keeping the **predictable state model** you're already comfortable with.
+The best part? You get all the power of Android’s platform, background services, platform APIs, offline support, while keeping the **predictable state model** you're already comfortable with.
 
 
 ## TLDR
