@@ -103,4 +103,4 @@ Each worker runs in its **own isolated thread**, meaning:
 
 While both Kotlin and JavaScript provide ways to do work off the main thread, they do so with very different philosophies. Kotlin gives you the tools for **structured concurrency and thread control**, while JavaScript provides a **sandboxed, message-passing approach** for safety and simplicity.
 
-Understanding the capabilities and limitations of each helps you write more efficient, responsive, and safe concurrent applications—no matter which platform you're on.
+Understanding the capabilities and limitations of each helps you write more efficient, responsive, and safe concurrent applications, no matter which platform you're on.
