@@ -70,5 +70,13 @@
   "content": "kotlin-higher-order-function.md",
   "tags": ["Kotlin", "Android", "Functions", "Best Practices"],
   "slug": "higher-order-functions-kotlin"
-}
+  },
+  {
+  "title": "Kotlin Multithreading vs JavaScript Web Workers: A Practical Comparison",
+  "subtitle": "Kotlin Multithreading vs JavaScript Web Workers: A Practical Comparison.",
+  "lastUpdated": "26/05/2025",
+  "content": "multithreading-js-vs-kotlin.md",
+  "tags": ["Kotlin", "JavaScript"],
+  "slug": "kotlin-vs-js-threading"
+  }
 ]
