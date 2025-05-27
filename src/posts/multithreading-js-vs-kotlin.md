@@ -1,11 +1,3 @@
----
-title: "Kotlin Multithreading vs JavaScript Web Workers: A Practical Comparison"
-subtitle: "How concurrency works across two different ecosystems: the JVM and the browser"
-lastUpdated: "27/05/2025"
-tags: ["Kotlin", "JavaScript", "Multithreading", "Web Workers", "Concurrency"]
-slug: "kotlin-vs-js-threading"
----
-
 # Kotlin Multithreading vs JavaScript Web Workers: A Practical Comparison
 
 Multithreading and concurrency are fundamental to writing responsive and performant applications. But how you approach these tasks differs greatly depending on the environment and language you’re working with. This post compares **Kotlin’s multithreading on the JVM** with **JavaScript’s Web Workers in the browser** to help you understand their trade-offs and how to use them effectively.
