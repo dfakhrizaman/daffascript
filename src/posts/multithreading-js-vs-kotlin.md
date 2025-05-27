@@ -87,10 +87,10 @@ Each worker runs in its **own isolated thread**, meaning:
 
 | Feature                | Kotlin (JVM)                  | JavaScript Web Workers            |
 |------------------------|-------------------------------|------------------------------------|
-| True multithreading    | ✅ Yes                         | 🚫 No (isolated thread model)     |
-| Shared memory          | ✅ Yes                         | 🚫 No (copy via postMessage)      |
+| True multithreading    | Yes                         | No (isolated thread model)     |
+| Shared memory          | Yes                         | No (copy via postMessage)      |
 | Communication method   | Shared state, channels        | Message passing via `postMessage` |
-| UI access              | ✅ Yes (if on main thread)     | 🚫 No access to DOM               |
+| UI access              | Yes (if on main thread)     | No access to DOM               |
 | Error propagation      | Exception handling + Coroutine cancellation | Try-catch + `onerror` handler     |
 | Use case example       | Server-side processing, Android apps | Browser-based background tasks    |
 
