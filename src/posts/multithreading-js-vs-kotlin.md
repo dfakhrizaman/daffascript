@@ -94,21 +94,13 @@ Each worker runs in its **own isolated thread**, meaning:
 | Error propagation      | Exception handling + Coroutine cancellation | Try-catch + `onerror` handler     |
 | Use case example       | Server-side processing, Android apps | Browser-based background tasks    |
 
----
-
-## 🤔 When to Use Which?
+## When to Use Which?
 
 - **Kotlin**: Ideal for Android or backend applications where you need fine-grained control over concurrency, and performance matters.
 - **JavaScript Web Workers**: Great for offloading CPU-intensive tasks (e.g., image processing, data crunching) in browser apps without freezing the UI.
 
-## 🧪 Final Thoughts
+## Final Thoughts
 
 While both Kotlin and JavaScript provide ways to do work off the main thread, they do so with very different philosophies. Kotlin gives you the tools for **structured concurrency and thread control**, while JavaScript provides a **sandboxed, message-passing approach** for safety and simplicity.
 
 Understanding the capabilities and limitations of each helps you write more efficient, responsive, and safe concurrent applications—no matter which platform you're on.
-
-<!-- ---
-
-**Author:**  
-*Daffa Fakhrizaman*  
-*Software Engineer | Kotlin & JavaScript Enthusiast* -->
